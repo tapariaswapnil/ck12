@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CK-12 Assignment - Table of Content</title>
+</head>
+
+<body>
+	<h2 style="text-align: center">
+		Table of Content
+	</h2>
+	<div class="container">
+		<div id="table"></div>
+	</div>
+	<script src="/assets/js/index.js"> </script>
+</body>
+
+
+<style>
+	* {
+		box-sizing: border-box;
+	}
+
+	body {
+		margin: 0;
+	}
+	
+	.container {
+		position: relative;
+		overflow: hidden;
+	}
+
+	#table {
+		display: flex;
+		flex-direction: column;
+
+		left: 0;
+		right: 0;
+
+		width: 60%;
+		margin: auto;
+	}
+
+	.resource-row .row-button {
+		display: flex; 
+    border: 0;
+		border-bottom: 1px solid #00bfbb;
+    width: 100%;
+    padding: 15px 30px;
+		cursor: pointer;
+		transition: background-color .15s ease-in;
+		background-color: #c5fffa;
+		font-size: 20px;
+		font-family: math;
+		align-items: center;
+		z-index: 5;
+		position: relative;
+	}
+
+	.row-button.lesson {
+		cursor: default;
+	}
+
+	.resource-row.show {
+		box-shadow: 0 6px 10px 5px #ddd;
+		margin-bottom: 10px;
+		transition: all .2s ease-in;
+	}
+
+	.row-button:hover:not(.lesson) {
+		background-color: #8ffff6;
+	}
+
+	.complete-count-status {
+		margin-left: auto;
+		flex-basis: 15%;
+	}
+
+	.type {
+		text-transform: capitalize;
+		flex-basis: 60%;
+	}
+
+	.type-position {
+		flex-basis: 15%;
+		text-align: left;
+		display: flex;
+		color: #666;
+	}
+
+	.resource-name {
+		flex-basis: 50%;
+		text-align: left;
+	}
+
+	.section-name {
+		flex-basis: 50%;
+		text-align: left;
+	}
+
+	.resource-row .sections-list {
+		display: flex;
+		flex-direction: column;
+		transition: margin-top .3s ease-in;
+		z-index: -1;
+		position: relative;
+	}
+
+	.section-list-wrapper {
+		overflow: hidden;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.sections-list .section-row {
+    padding: 15px 30px;
+		display: flex;
+		background-color: #fcfcfc;
+	}
+
+	.hide .sections-list {
+		margin-bottom: 0;
+		display: none;
+	}
+
+	.status {
+		position: relative;
+		padding-left: 16px;
+	}
+
+	.status:before {
+		content: '';
+		position: absolute;
+		width: 12px;
+		height: 12px;
+		left: 0;
+		top: 50%;
+		transform: translateY(-50%);
+		border-radius: 50%;
+	}
+
+	.status.finish:before {
+		background-color: green;
+		box-shadow: -1px 0px 2px 1px rgb(123 123 123), inset -3px 0px 6px 1px #006200
+	}
+
+	.status.progress:before {
+		background-color: yellow;
+		box-shadow: -1px 0px 2px 1px rgb(123 123 123), inset -3px 0px 6px 1px #d5d500
+	}
+
+	.status.not-started:before {
+		background-color: red;
+		box-shadow: -1px 0px 2px 1px rgb(123 123 123), inset -3px 0px 6px 1px #b40000;
+	}
+
+	@media(max-width: 1280px) {
+		#table {
+			width: 95%;
+		}
+	}
+</style>
+</html>
